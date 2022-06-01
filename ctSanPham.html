@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=My+Soul&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Font-Awesomecss/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+    <title>Document</title>
+    <style>
+      * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ margin: 0;
+ font-size: 14px;
+ line-height: 1.5;
+ background-color: #fff;
+ max-width: 100%;
+ font-weight: 400;
+ font-family: Arial, Helvetica, sans-serif;
+ display: block;
+}
+
+.container {
+ padding: auto;
+ margin: auto;
+ width: 100%;
+ display: grid;
+ height: auto;
+ grid-template-columns: 1fr;
+ grid-template-rows: 120px 50px 5300px 250px;
+ grid-gap: 5px;
+ grid-template-areas: "head"
+              "left_ct"
+              "content"
+              "footer";
+}
+
+.container .head {
+ grid-area: head;
+ height: auto;
+ width: 100% !important;
+ margin: 0px;
+ background-color: aliceblue;
+}
+
+.container.head-fluid {
+ margin: 0;
+ padding: 0;
+}
+
+.topnav {
+ overflow: hidden;
+ background-color: #e9e9e9;
+ background-image: linear-gradient(to right, white, red,red , white);
+ padding: 10px;
+ width: auto;
+}
+
+.topnav .danhsach .logo a {
+ font-size: 30px;
+ color: #897107;
+ font-family: 'Lobster', cursive;
+}
+
+.topnav a {
+ float: left;
+ display: block;
+ color: black;
+ text-align: center;
+ padding: 4px 16px;
+ text-decoration: none;
+ font-size: 17px;
+}
+
+.topnav .danhsach .fa-shopping-cart {
+ font-size: 30px;
+}
+
+.topnav .danhsach .dn {
+ display: none;
+}
+
+.topnav .danhsach .dk {
+ display: none;
+}
+
+.topnav .danhsach .gh {
+ display: none;
+}
+
+.topnav .search-container {
+ float: right;
+}
+
+.topnav input[type=text] {
+ padding: 6px;
+ margin-top: 8px;
+ font-size: 17px;
+ border: none;
+ border-radius: 10px;
+}
+
+.topnav .search-container button {
+ float: right;
+ padding: 6px 10px;
+ margin-top: 8px;
+ margin-right: 16px;
+ background: #ddd;
+ font-size: 17px;
+ border: none;
+ cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+ background: #ccc;
+}
+
+.topnav #toggle {
+ float: left;
+ cursor: pointer;
+}
+
+.topnav #toggle i {
+ text-align: end;
+}
+
+.topnav h5 {
+ display: none;
+}
+
+.topnav .danhsach {
+ display: flex;
+ float: left;
+ list-style: none;
+ justify-content: space-between;
+}
+
+.topnav .danhsach button {
+ position: relative;
+ height: 30px;
+ width: 30px;
+}
+
+.container .head .danhsach .media {
+ display: none;
+}
+
+.container .head .danhsach .dangnhap span {
+ display: none;
+}
+
+.container .head .danhsach #dangky {
+ display: none;
+}
+
+.container .head .danhsach #giohang {
+ display: none;
+}
+
+.container .head .danhsach .dangnhap i {
+ position: relative;
+ top: 10px;
+}
+
+.container .head .danhsach .dangnhap i {
+ font-size: 27px;
+ color: #F5F6FA;
+ justify-content: left;
+}
+
+.container .head .danhsach .dangnhap:hover i {
+ color: #bda22c;
+}
+
+.container .left {
+ grid-area: left;
+ height: auto;
+ background-color: aliceblue;
+ display: none;
+}
+
+.container .left div:hover {
+ background-color: rgb(7, 78, 145);
+}
+
+.container .left div {
+ background-color: aqua;
+ margin: 3px;
+}
+
+.container .left a {
+ text-decoration: none;
+ color: aliceblue;
+ padding: 3px;
+}
+
+.container .left_ct {
+ grid-area: left_ct;
+ padding: 2px;
+ justify-items: left;
+}
+
+.container .left_ct {
+ left: 100px;
+ grid-area: left_ct;
+ top: -134px;
+ margin-left: -5px;
+ Display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 10px;
+ display: block;
+ height: 100%;
+}
+
+.left_ct {
+ border-radius: 10px;
+}
+
+.left_ct .menu {
+ width: 100%;
+ height: 30px;
+ overflow: hidden;
+}
+
+#menuToggle {
+ display: flex;
+ flex-direction: column;
+ position: relative;
+ top: 25px;
+ left: 25px;
+ z-index: 1;
+ -webkit-user-select: none;
+ user-select: none;
+}
+
+#menuToggle input {
+ display: flex;
+ width: 40px;
+ height: 32px;
+ position: absolute;
+ cursor: pointer;
+ opacity: 0;
+ z-index: 2;
+}
+
+#menuToggle span {
+ display: flex;
+ width: 29px;
+ height: 2px;
+ margin-bottom: 5px;
+ position: relative;
+ background: black;
+ border-radius: 3px;
+ z-index: 1;
+ transform-origin: 5px 0px;
+ transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+          background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                  opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+ transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+ transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+ opacity: 1;
+ transform: rotate(45deg) translate(-3px, -1px);
+ background: #36383F;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+ opacity: 0;
+ transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+ transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+ position: absolute;
+ width: 100%;
+ box-shadow: 0 0 10px #85888C;
+ margin: -25px 0 0 -10px;
+ background-color: #F5F6FA;
+ -webkit-font-smoothing: antialiased;
+ transform: translate(-150%, 0%);
+ transition: transform 0.5s;
+ list-style: none;
+ border-radius: 10px;
+}
+
+#menu li {
+ float: left;
+ padding: 20px;
+ transition-delay: 2s;
+ top: -50px;
+}
+
+#menu li:hover a {
+ color: red;
+}
+
+.content nav ul li a {
+ text-decoration: none;
+ color: black;
+}
+
+#menuToggle input:checked ~ ul {
+ transform: none;
+}
+
+.container .left_ct .carousel {
+ width: 82%;
+ grid-area: left_ct;
+ padding: 0px;
+ position: absolute;
+ top: 60px;
+ margin: 0;
+ left: 15%;
+}
+
+.container .content .carousel {
+ width: 100%;
+ height: 90%;
+ margin: 0;
+ padding: 0;
+ box-shadow: 0 0 0px #85888C;
+ float: left;
+}
+
+.container .content .content-right .title-product h3 {
+ width: 600px;
+ float: right;
+}
+
+.share-group_item {
+ display: inline-block;
+ width: 30px;
+ height: 30px;
+ color: #fff;
+ border-radius: 999px;
+ line-height: 30px;
+ text-align: center;
+ cursor: pointer;
+ transition: opacity .3s ease;
+}
+
+.share-group_list {
+ padding-left: 10px;
+}
+
+.share-group_item.pinterest {
+ background-color: #E60023;
+}
+
+.share-group_item.facebook {
+ background-color: #4267B2;
+}
+
+.share-group_item.instagram {
+ background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+}
+
+.sapo-product-reviews-badge {
+ display: flex;
+ align-items: center;
+}
+
+.sapo-product-reviews-star {
+ color: #ffbe00;
+}
+
+.sapo-product-reviews-badge .sapo-product-reviews-star {
+ display: flex;
+ align-items: center;
+ line-height: 1;
+}
+
+.fa-star {
+ color: #ffbe00;
+}
+
+.group-status {
+ font-size: 14px;
+}
+
+.price-box {
+ display: flex;
+ align-items: center;
+ flex-wrap: wrap;
+ background: transparent;
+ padding-left: 0;
+ padding-right: 0;
+ margin-top: calc(var(--block-spacing) * 2);
+ column-gap: 4px;
+ color: red;
+ font-size: 20px;
+ line-height: 24px;
+ font-family: inherit;
+ font-weight: 700;
+}
+
+.product-promotion__heading {
+ color: #fff;
+ margin-bottom: 8px;
+ background-color: #dd0115;
+ font-size: 14px;
+ font-weight: 700;
+ padding: 5px 10px;
+}
+
+.product-promotion {
+ margin-bottom: 0;
+ border-radius: 4px;
+ padding: 8px 8px 8px 15px;
+ list-style-position: inside;
+ background: #fff;
+}
+
+.swatch {
+ display: flex;
+ align-items: center;
+ flex-wrap: wrap;
+ padding: 0 0 10px;
+}
+
+.swatch .header {
+ font-weight: bold;
+ padding-right: 20px;
+ min-width: 115px;
+ color: #333;
+}
+
+.swatch-element.color {
+ margin: 8px 15px 0px 0px;
+}
+
+*style {
+ background: url(https://bizweb.dktcdn.net/100/441/086/products/color-xanh-reu.png?v=1642735929503) no-repeat center center;
+ background-size: cover;
+}
+
+.swatch .color input:checked+label {
+ border-color: #eee !important;
+}
+
+.swatch .swatch-element input:checked+label {
+ border-color: #dd0115 !important;
+ color: #dd0115;
+ position: relative;
+}
+
+.swatch .color label {
+ position: relative;
+ z-index: 2;
+ border-radius: 100% !important;
+}
+
+.swatch .color label {
+ width: 24px;
+ min-width: unset !important;
+ height: 24px !important;
+ line-height: 24px !important;
+ border-radius: 6px !important;
+}
+
+.swatch-element label {
+ padding: 10px;
+ font-size: 14px;
+ border-radius: 6px;
+ height: 30px !important;
+ min-width: auto !important;
+ white-space: nowrap;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+}
+
+label {
+ display: inline-block;
+ margin-bottom: 0.5rem;
+}
+
+.swatch-element input {
+ width: 100%;
+ height: 100%;
+ opacity: 0;
+ position: absolute;
+ z-index: 3;
+ top: 0;
+ left: 0;
+ cursor: pointer;
+}
+
+input[type=checkbox], input[type=radio] {
+ box-sizing: border-box;
+ padding: 0;
+}
+
+button, input {
+ overflow: visible;
+}
+
+.swatch-element {
+ position: relative;
+ margin: 8px 10px 0px 0px;
+}
+
+.button_actions {
+ display: flex;
+ margin-bottom: 10px;
+ flex-wrap: wrap;
+}
+
+.btn:not(:disabled):not(.disabled) {
+ cursor: pointer;
+}
+
+.button_actions .btn {
+ transition: all 0.3s ease;
+ font-weight: 700;
+ text-decoration: none;
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+ flex-flow: column;
+ -webkit-box-pack: center;
+ -ms-flex-pack: center;
+ justify-content: center;
+ -webkit-box-align: center;
+ -ms-flex-align: center;
+ align-items: center;
+ height: 55px;
+ font-size: 14px;
+ line-height: 20px;
+ padding: 5px 10px;
+ line-height: 42px;
+}
+
+.button_actions .btn_base {
+ width: 100%;
+}
+
+.button_actions .btn.buynow span {
+ text-transform: initial;
+}
+
+.button_actions .btn span {
+  /* font-weight: 400; */
+ font-size: small;
+ text-transform: uppercase;
+}
+
+.buynow {
+ line-height: 20px !important;
+}
+
+.buynow, .quick-view-product .button_actions .btn-cart {
+ grid-column: 1 / -1;
+ background-color: var(--buynow-bg);
+ color: var(--buynow-text-color);
+}
+
+.btn {
+ padding: 7px 20px;
+}
+
+.btn {
+ font-size: 14px;
+}
+
+.form-control:focus, a, button, .page-link:focus, .btn, .btn:focus {
+ outline: none !important;
+ box-shadow: none;
+}
+
+.btn {
+ border-radius: 4px;
+}
+
+.button_actions .btn-cart {
+ margin-right: 5px;
+}
+
+.button_actions .btn-cart, .btn-installment {
+ background-color: #fff;
+ color: #ed3324;
+ border: 1px solid #ed3324;
+ margin-top: 10px;
+ width: calc(50% - 5px);
+ margin-left: 1px;
+ line-height: initial !important;
+}
+
+.product-right {
+ margin-top: 15px;
+}
+
+.product-policises-wrapper {
+ margin-top: var(--block-spacing);
+ padding: var(--block-spacing) 0;
+}
+
+.product-policises {
+ font-size: 14px;
+ display: flex;
+ flex-direction: column;
+}
+
+.card {
+ border-radius: 0.25rem;
+ padding: 15px;
+}
+
+.media {
+ display: -ms-flexbox;
+ display: flex;
+ -ms-flex-align: start;
+ align-items: flex-start;
+}
+
+.product-policises .media > div:not(.media-body) {
+ width: 24px;
+ height: 24px;
+}
+
+.mr-2, .mx-2 {
+ margin-right: 0.5rem!important;
+}
+
+.media-body {
+ -ms-flex: 1;
+ flex: 1;
+}
+
+.product-policises .media + * {
+ margin-top: 10px;
+ border-top: 1px
+px
+dashed var(--border-color);
+ padding-top: 10px;
+}
+
+section {
+ margin-bottom: 40px;
+}
+
+.container, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto, .col-lg-15, .col-lg-20, .col-lg-80, .col-lg-60 {
+ padding-right: 10px;
+ padding-left: 10px;
+}
+
+@media (min-width: 1440px) {
+}
+
+.container {
+ max-width: 100%;
+}
+
+@media (min-width: 768px) {
+}
+
+.container, .container-sm, .container-md {
+ max-width: 100%;
+}
+
+@media (min-width: 576px) {
+}
+
+.container, .container-sm {
+ max-width: 100%;
+}
+
+.container .footer {
+ grid-area: footer;
+ width: 100% !important;
+ background-color: #85888C;
+ background-image: linear-gradient(to right, white, #85888C,#85888C , white);
+ color: aliceblue;
+ text-align: center;
+ margin: 0;
+}
+
+.footer .ft div {
+ margin: 5px;
+}
+
+.footer .ft .ten {
+ font-family: 'Lobster', cursive;
+ font-size: 30px;
+}
+
+.footer .ft a {
+ color: #bda22c;
+ text-decoration: none;
+}
+
+.footer .info {
+ background-image: linear-gradient(to right, white, rgb(73, 72, 72),rgb(73, 72, 72) , white);
+}
+
+.footer .info .lienhe {
+ display: none;
+}
+
+.footer .info i {
+ justify-content: center;
+ font-size: 25px;
+ margin: 10px;
+}
+
+.footer .info a {
+ text-align: center;
+ text-decoration: none;
+ color: #e9e9e9;
+}
+/*====================footer=======================================================================  */
+/* -============================================ */
+      
+.zl {
+ position: relative;
+ margin: 0px 30px 0px 30px;
+ position: sticky;
+ top: 450px;
+ z-index: 1;
+}
+
+.zl a {
+ position: absolute;
+ top: 30px;
+ left: 95%;
+ width: 43px;
+ height: 43px;
+ font-size: 30px;
+ text-align: center;
+ padding: 4px;
+ border-radius: 50px;
+}
+
+.zl i {
+ color: white;
+}
+
+.fb {
+ position: relative;
+ margin: 0px 30px 0px 30px;
+ position: sticky;
+ top: 570px;
+ z-index: 1;
+}
+
+.fb a {
+ position: absolute;
+ top: 30px;
+ left: 95%;
+ width: 50px;
+ height: 50px;
+ border: 1px solid grey;
+ font-size: 30px;
+ text-align: center;
+ padding: 4px;
+ border-radius: 50px;
+ background-color: rgb(52, 52, 243);
+}
+
+.fb i {
+ color: white;
+}
+
+.dt {
+ position: relative;
+ margin: 0px 30px 0px 30px;
+ position: sticky;
+ top: 510px;
+ z-index: 1;
+}
+
+.dt a {
+ position: absolute;
+ top: 30px;
+ left: 95%;
+ width: 45px;
+ height: 45px;
+ border: 1px solid red;
+ font-size: 25px;
+ text-align: center;
+ padding: 4px;
+ border-radius: 50px;
+ background-color: red;
+}
+
+.dt i {
+ color: white;
+}
+
+.footer {
+ display: block;
+}
+
+.footer .ft div {
+ margin: 5px;
+}
+
+.footer .ft .ten {
+ font-family: 'Lobster', cursive;
+ font-size: 30px;
+}
+
+.footer .ft a {
+ color: #bda22c;
+ text-decoration: none;
+}
+
+.footer .info {
+ background-image: linear-gradient(to right, white, rgb(73, 72, 72),rgb(73, 72, 72) , white);
+}
+
+.footer .info .lienhe {
+ display: block;
+ font-size: 20px;
+}
+
+.footer .info i {
+ justify-content: center;
+ font-size: 25px;
+ margin: 10px;
+}
+
+.footer .info a {
+ text-align: center;
+ text-decoration: none;
+ color: #e9e9e9;
+}
+
+.footer .gioithieu {
+ position: absolute;
+ border: 1px solid #85888C;
+ padding: 5px;
+ margin: auto;
+ font-size: 20px;
+ border-radius: 10px;
+ width: 250px;
+ height: auto;
+ background-color: white;
+ right: 40%;
+}
+
+.footer .gioithieu:hover a {
+ color: red;
+}
+
+.footer.gioithieu a {
+ text-align: center;
+ right: 50%;
+}            
+          /* ===================footer==================================================================== */
+         
+        
+          
+
+          /* ====================icon====================================================================== */
+.zl {
+ position: relative;
+ margin: 0px 30px 0px 30px;
+ position: sticky;
+ top: 510px;
+}
+
+.zl a {
+ position: absolute;
+ top: 30px;
+ left: 95%;
+ width: 43px;
+ height: 43px;
+ font-size: 30px;
+ text-align: center;
+ padding: 4px;
+ border-radius: 50px;
+}
+
+.zl i {
+ color: white;
+}
+
+.fb {
+ position: relative;
+ margin: 0px 30px 0px 30px;
+ position: sticky;
+ top: 630px;
+}
+
+.fb a {
+ position: absolute;
+ top: 30px;
+ left: 95%;
+ width: 50px;
+ height: 50px;
+ border: 1px solid grey;
+ font-size: 30px;
+ text-align: center;
+ padding: 4px;
+ border-radius: 50px;
+ background-color: rgb(52, 52, 243);
+}
+
+.fb i {
+ color: white;
+}
+
+.dt {
+ position: relative;
+ margin: 0px 30px 0px 30px;
+ position: sticky;
+ top: 570px;
+}
+
+.dt a {
+ position: absolute;
+ top: 30px;
+ left: 95%;
+ width: 45px;
+ height: 45px;
+ border: 1px solid red;
+ font-size: 25px;
+ text-align: center;
+ padding: 4px;
+ border-radius: 50px;
+ background-color: red;
+}
+
+.dt i {
+ color: white;
+}
+      /*===========================Responesvie===========================*/
+
+  </style>
+</head>
+<body>
+	<div class="container">
+		<div class="head">
+			<div class="topnav">
+				<ul class="danhsach">
+					<li class="logo"> <a href="index.html"> VTSTORE.com</a> </li>
+					<li class="dangnhap"> <a href="giohang.html"><i class="fas fa-shopping-cart"></i><span id="giohang"> Giỏ hàng </span></a></li>
+					<li class="dangnhap">
+						<a href="login.html"> <i class="fa fa-user-tie fa-2x"></i> <span> Đăng nhập</span></a>
+					</li>
+					<li class="media d-lg-flex d-none hotline">
+						<!-- <img src="//bizweb.dktcdn.net/100/441/086/themes/861582/assets/phone-icon.png?1653040215086" width="24" height="24" class="mr-3 align-self-center" alt="phone-icon"> --><i style="color:white; font-size: 25px; position: relative; top:10px;" class="fa-solid fa-phone"></i>
+						<div class="media-body d-md-flex flex-column d-none1 "> <span>Gọi mua hàng</span> <a class="font-weight-bold d-block" href="tel:0974008742" title="19006750">
+                                            19006789
+                                        </a> </div>
+					</li>
+				</ul>
+				<div class="search-container">
+					<form action="/action_page.php">
+						<input type="text" placeholder="Tìm kiếm.." name="search">
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="left_ct">
+			<div class="container">
+				<div class="phone">
+					<div class="content">
+						<nav role="navigation">
+							<div id="menuToggle">
+								<input type="checkbox" /> <span></span> <span></span> <span></span>
+								<ul id="menu">
+									<li><i class="fa fa-gift"></i> &ensp;<a href="index.html">Tổng hợp khuyến mãi</a></li>
+									<li><i class="fa fa-microchip"></i>&ensp;<a href="dsLinhKien.html">Linh kiện máy tính &emsp;  </a></li>
+									<li><i class="fa fa-desktop"></i>&ensp;<a href="manghinh.html">Màn máy tính  &ensp;&ensp;&nbsp;&emsp;&emsp;</a></li>
+									<li><i class="fa fa-laptop"></i>&ensp;<a href="dsSanPham.html">Laptop & Macbook &ensp; </a></li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content" style="width: 100%; height: auto;">
+            <div class="details-prouct" style="height: 4500px;">
+                <div class="row m-sm-0">
+                    <div class="carousel" style="width: 50%;">
+                        <div class="pb-3 pt-0col_large_default large-image">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active"> <img src="hinh/a1.jpg" class="d-block w-100" alt="..."> </div>
+                                    <div class="carousel-item"> <img src="hinh/a3.jpg" class="d-block w-100" alt="..."> </div>
+                                    <div class="carousel-item"> <img src="hinh/a3.jpg" class="d-block w-100" alt="..."> </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button>
+                                <div class="share-group d-flex justify-content-center align-iteams-center mt-5" > 
+                                    <strong class="share-group_heading mr-3"> Chia sẻ</strong>
+                                    <div class="share-group_list " style="width:113.8px; height:30px;">
+                                        <a class="share-group_item facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=https://ega-techstore.mysapo.net/apple-watch-series-7-vien-nhom-cellular">
+                                            <i class="fab fa-facebook"></i>
+                                        </a>
+                                        <a class="share-group_item pinterest" target="_blank" href="http://www.facebook.com/sharer.php?u=https://ega-techstore.mysapo.net/apple-watch-series-7-vien-nhom-cellular">
+                                            <i class="fab fa-pinterest"></i>
+                                        </a>
+                                        <a class="share-group_item instagram" target="_blank" href="http://www.facebook.com/sharer.php?u=https://ega-techstore.mysapo.net/apple-watch-series-7-vien-nhom-cellular">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-right" style="width: 50%;">
+                        <h4 class="title-product">Laptop MSI Bravo 15 B5DD 275VN</h4>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="group-status"> <span class="first_status mr-2">
+                            Thương hiệu:
+                            <span class="status_name">
+                                <a href="index.html" target="_blank" class="text-primary" title="MSI">
+                                    MSI
+                                </a>
+                            </span> </span> <span class="first_status product_sku">
+                            Mã sản phẩm:
+                            <span class="status_name product-sku"> 
+                                <a href="index.html" target="_blank" class="text-primary" title="Laptop Lenovo Gaming Legion 5 15ARH05 82B500GUVN">
+                                 Laptop Lenovo Gaming Legion 5 15ARH05 82B500GUVN
+                                </a> 
+                        <div class="price-box">
+                            <span class="special-price"><span class="price product-price">20.490.000₫</span> 
+                            </span> <!-- Giá Khuyến mại -->
+                            <span class="old-price">
+                            <del class="price product-price-old" style="display: none;">
+                            </del> 
+                            </span> 
+                            <div class="label_product" style="display:none">
+                            </div>
+                            <div class="save-price" style="display: none;">
+                            </div>
+                            <!-- Giá gốc -->
+                         </div>
+                         <div class="product-promotion rounded-sm" id="ega-salebox">
+                            <h3 class="product-promotion__heading rounded-sm d-inline-flex align-items-center">
+                               <img src="https://bizweb.dktcdn.net/100/441/086/themes/861582/assets/icon-product-promotion.png?1653472861848" alt="Laptop Lenovo Gaming Legion 5 15ARH05 82B500GUVN" width="16" height="16" class="mr-2">
+                               KHUYẾN MÃI - ƯU ĐÃI
+                            </h3>
+                            <ul class="promotion-box">
+                               <li>Nhập mã <strong>EGANY</strong> thêm 5% đơn hàng <span onclick="codeCopy(this)" class="smb-copy smb-cursor-pointer text-danger" data-code="EGANY" data-copied-text="Đã chép">Sao chép</span></li>
+                               <li>Giảm giá 10% khi mua từ 5 sản phẩm</li>
+                               <li>Tặng phiếu mua hàng khi mua từ 500k </li>
+                            </ul>
+                         </div>
+                         <div class="swatch clearfix swatch-color" data-option-index="0">
+                            <div class="header">Màu sắc:</div>
+                            <div class="position-relative" style="width:39px; height:40px;">
+                               <div data-value="Xanh rêu" class="swatch-element color Xanh rêu available">
+                                  <input id="swatch-0-xanh-reu" type="radio" name="option-0" value="Xanh rêu" checked="">
+                                  <label style="background: url(https://bizweb.dktcdn.net/100/441/086/products/color-xanh-reu.png?v=1642735929503) no-repeat center center; background-size: cover"></label>		
+                                  <span></span>
+                               </div>
+                               <div class="tooltip">Xanh rêu</div>
+                            </div>
+                            <script>
+                               jQuery('.swatch[data-option-index="0"] .Xanh rêu').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <script>
+                               jQuery('.swatch[data-option-index="0"] .Xanh rêu').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <div class="position-relative" style="width:39px; height:40px;">
+                               <div data-value="Xanh dương" class="swatch-element color Xanh dương available">
+                                  <input id="swatch-0-xanh-duong" type="radio" name="option-0" value="Xanh dương">
+                                  <label style="background: url(https://bizweb.dktcdn.net/100/441/086/products/color-xanh-duong.png?v=1642735929063) no-repeat center center; background-size: cover"></label>		
+                                  <span></span>
+                               </div>
+                               <div class="tooltip">Xanh dương</div>
+                            </div>
+                            <script>
+                               jQuery('.swatch[data-option-index="0"] .Xanh dương').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <script>
+                               jQuery('.swatch[data-option-index="0"] .Xanh dương').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <div class="position-relative"style="width:39px; height:40px;">
+                               <div data-value="Đỏ" class="swatch-element color Đỏ available">
+                                  <input id="swatch-0-do" type="radio" name="option-0" value="Đỏ">
+                                  <label style="background: url(https://bizweb.dktcdn.net/100/441/086/products/color-do.png?v=1642735928527) no-repeat center center; background-size: cover"></label>		
+                                  <span></span>
+                               </div>
+                               <div class="tooltip">Đỏ</div>
+                            </div>
+                            <script>
+                               jQuery('.swatch[data-option-index="0"] .Đỏ').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <script>
+                               jQuery('.swatch[data-option-index="0"] .Đỏ').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <div class="position-relative" style="width:39px; height:40px;">
+                               <div data-value="Kem" class="swatch-element color Kem available">
+                                  <input id="swatch-0-kem" type="radio" name="option-0" value="Kem">
+                                  <label style="background: url(https://bizweb.dktcdn.net/100/441/086/products/color-kem.png?v=1642735928750) no-repeat center center; background-size: cover"></label>		
+                                  <span></span>
+                               </div>
+                               <div class="tooltip">Kem</div>
+                            </div>
+                            <script>
+                               jQuery('.swatch[data-option-index="0"] .Kem').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <script>
+                               jQuery('.swatch[data-option-index="0"] .Kem').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                         </div>
+                         <div class="swatch clearfix" data-option-index="1">
+                            <div class="header">Kiểu dáng:</div>
+                            <div class="position-relative">
+                               <div data-value="41mm" class="swatch-element 41mm available">
+                                  <input id="swatch-1-41mm" type="radio" name="option-1" value="41mm" checked="">
+                                  <label>
+                                  41mm
+                                  </label>
+                               </div>
+                            </div>
+                            <script>
+                               jQuery('.swatch[data-option-index="1"] .41mm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <div class="position-relative">
+                               <div data-value="45mm" class="swatch-element 45mm available">
+                                  <input id="swatch-1-45mm" type="radio" name="option-1" value="45mm">
+                                  <label>
+                                  45mm
+                                  </label>
+                               </div>
+                            </div>
+                            <script>
+                               jQuery('.swatch[data-option-index="1"] .45mm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <script>
+                               jQuery('.swatch[data-option-index="1"] .41mm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <script>
+                               jQuery('.swatch[data-option-index="1"] .45mm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <script>
+                               jQuery('.swatch[data-option-index="1"] .41mm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <script>
+                               jQuery('.swatch[data-option-index="1"] .45mm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <script>
+                               jQuery('.swatch[data-option-index="1"] .41mm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                            <script>
+                               jQuery('.swatch[data-option-index="1"] .45mm').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+                            </script>
+                         </div>
+                         <div class="form_button_details w-100" style="width:470px; height: 207px;">
+                               <div class="button_actions" >
+                                  <button  type="submit"  class="btn btn_base buynow" style="background-color: red; color:#ddd;" >MUA NGAY<span>Giao hàng tận nơi hoặc nhận tại cửa hàng</span></button>
+                                  <div style="display: flex; flex-wrap: wrap; width: 100%">
+                                     <button type="submit" class="btn btn_add_cart btn-cart add_to_cart"><a href="giohang.html"> THÊM VÀO GIỎ</a></button>
+                                     <a class="btn btn-installment" href="index.html">
+                                     MUA TRẢ GÓP<span>Duyệt hồ sơ trong 5 phút</span>
+                                     </a>
+                                  </div>
+                               </div>
+                               <p class="product-hotline mb-0 text-center">
+                                  Gọi đặt mua <a href="index.html">1800.0000</a> (7:30 - 22:00)
+                               </p>
+                            </div>
+                         </div>
+                         <div class="product-policises-wrapper">
+                            <ul class="product-policises list-unstyled card border-0 p-3 m-0">
+                               <li class="media">
+                                  <div class="mr-2">
+                                     <img class="img-fluid " width="24" height="24" src="https://bizweb.dktcdn.net/100/441/086/themes/861582/assets/policy_product_image_1.png?1653472861848" alt="Giao hàng miễn phí trong 24h (chỉ áp dụng khu vực nội thành)">
+                                  </div>
+                                  <div class="media-body"> 
+                                     Giao hàng miễn phí trong 24h (chỉ áp dụng khu vực nội thành)
+                                  </div>
+                               </li>
+                               <li class="media">
+                                  <div class="mr-2">
+                                     <img class="img-fluid " width="24" height="24" src="https://bizweb.dktcdn.net/100/441/086/themes/861582/assets/policy_product_image_3.png?1653472861848" alt="Trả góp lãi suất 0% qua thẻ tín dụng Visa, Master, JCB">
+                                  </div>
+                                  <div class="media-body"> 
+                                     Trả góp lãi suất 0% qua thẻ tín dụng Visa, Master, JCB
+                                  </div>
+                               </li>
+                               <li class="media">
+                                  <div class="mr-2">
+                                     <img class="img-fluid " width="24" height="24" src="https://bizweb.dktcdn.net/100/441/086/themes/861582/assets/policy_product_image_4.png?1653472861848" alt="Đổi trả miễn phí trong 30 ngày">
+                                  </div>
+                                  <div class="media-body"> 
+                                     Đổi trả miễn phí trong 30 ngày
+                                  </div>
+                               </li>
+                            </ul>
+                         </div>
+                    </div>
+                    <section class="section sec_tab ">
+                        <div class="container" style="position: relative;">
+                           <div class="row mr-sm-0 ml-sm-0">
+                              <div class="mb-3 mb-sm-0 col-12 col-xl-11 product-content js-content-wrapper card border-0">
+                                 <div class="title_module_main heading-bar d-flex justify-content-between align-items-center">
+                                    <h2 class="heading-bar__title ">
+                                       ĐẶC ĐIỂM NỔI BẬT
+                                    </h2>
+                                 </div>
+                                 <div id="ega-uti-editable-content" data-platform="sapo" data-id="24123431" class="rte js-product-getcontent product_getcontent pos-relative">
+                                    <div id="content" class="content js-content">
+                                       <p><strong>Kiểu dáng năng động, trẻ trung</strong></p>
+                                       <p>Apple Watch S7 LTE 41 mm viền thép&nbsp;có thiết kế tươi trẻ, hiện đại. Khung viền thép bền bỉ, cứng cáp cùng mặt kính Sapphire giúp bảo vệ an toàn cho đồng hồ trước những va đập không mong muốn. Màn hình OLED 1.61 inch hiển thị hình ảnh sống động, sắc nét, dây đeo silicone êm nhẹ, không thấm nước, cho bạn cảm giác dễ chịu suốt ngày dài.</p>
+                                       <p style="text-align: center;"><a href="https://www.thegioididong.com/images/7077/252283/apple-watch-series-7-lte-41mm-vien-thep-2.jpg" onclick="return false;"><img alt="Apple Watch Series 7 LTE 41mm viền thép - Thiết kế" data-src="https://phongvu.vn/may-tinh-xach-tay-laptop-msi-bravo-15-b5dd-275vn-amd-ryzen-7-5800h-den-s211105061.html?sku=211105061" src="hinh/3.jpg" title="Apple Watch Series 7 LTE 41mm viền thép - Thiết kế"></a></p>
+                                       <p><strong>Màn hình OLED luôn luôn hiển thị</strong></p>
+                                       <p>Đồng hồ được trang bị màn hình OLED 1.61 inch với độ phân giải&nbsp;<strong>484 x 396</strong>&nbsp;pixels đem đến sự rõ ràng, sắc nét, màu sắc sống động, tươi mới, độ sáng (sáng hơn 70% so với series 6) và độ tương phản cao mà vẫn tiết kiệm được điện năng. Với tính năng màn hình luôn hiển thị, người dùng yên tâm sử dụng khi tập thể thao, di chuyển ngoài trời mà không lo bỏ lỡ những tin nhắn, thông báo quan trọng.</p>
+                                       <p>Mặt kính đồng hồ loại Sapphire dày hơn 50% so với các thế hệ trước, đem đến sự bền bỉ, cứng chắc, chống nứt vỡ tốt, bảo vệ đồng hồ trước những va đập mạnh.</p>
+                                       <p style="text-align: center;"><a href="https://www.thegioididong.com/images/7077/252283/apple-watch-series-7-lte-41mm-vien-thep-08.jpg" onclick="return false;"><img alt="Apple Watch Series 7 LTE 41mm viền thép - Màn hình OLED" data-src="https://cdn.tgdd.vn/Products/Images/7077/252283/apple-watch-series-7-lte-41mm-vien-thep-08.jpg" src="hinh/3.jpg" title="Apple Watch Series 7 LTE 41mm viền thép - Màn hình OLED"></a></p>
+                                       <p><strong>WatchOS 8 - hệ điều hành mới với nhiều tính năng</strong></p>
+                                       <p>Hệ điều hành WatchOS 8 đem đến sự mượt mà trong các thao tác lướt đồng thời cũng dễ sử dụng hơn với các nút bấm trên màn hình được thiết kế lớn hơn, dễ bấm hơn cùng bàn phím fullsize giúp bạn có thể gõ, lướt QuickPath. Machine learning sẽ dự đoán từ ngữ tiếp theo dựa trên ngữ cảnh, cho bạn nhập văn bản nhanh chóng hơn.</p>
+                                       <p>WatchOS 8 tích hợp nhiều tính năng như theo dõi sức khỏe, tập luyện thể thao, theo dõi giấc ngủ, phát hiện té ngã, thay đổi mặt đồng hồ,...</p>
+                                       <p style="text-align: center;"><a href="https://www.thegioididong.com/images/7077/252283/apple-watch-series-7-lte-41mm-vien-thep-4.jpg" onclick="return false;"><img alt="Apple Watch Series 7 LTE 41mm viền thép - WatchOS 8" data-src="https://cdn.tgdd.vn/Products/Images/7077/252283/apple-watch-series-7-lte-41mm-vien-thep-4.jpg" src="hinh/3.jpg" title="Apple Watch Series 7 LTE 41mm viền thép - WatchOS 8"></a></p>
+                                       <p><strong>eSIM hiện đại - hỗ trợ nghe gọi trực tiếp trên đồng hồ</strong></p>
+                                       <p>Nhờ có&nbsp;eSim, người dùng có thể thoải mái nghe gọi ngay trên đồng hồ mà không cần kết nối với điện thoại, yên tâm tập thể thao hay ra ngoài mà không phải lo lắng bỏ lỡ cuộc gọi nào. Khi đồng hồ ghép nối với các thiết bị thông minh khác (iOS 15 trở lên và iPhone 6s trở lên) qua cổng bluetooth v5.0, bạn có thể thoải mái nhận thông báo về tin nhắn, cuộc gọi, thông báo ứng dụng (Zalo, Messenger, Line,...).</p>
+                                       <p style="text-align: center;"><a href="https://www.thegioididong.com/images/7077/252283/apple-watch-series-7-lte-41mm-vien-thep-8.jpg" onclick="return false;"><img alt="Apple Watch Series 7 LTE 41mm viền thép - Hỗ trợ eSim" data-src="https://cdn.tgdd.vn/Products/Images/7077/252283/apple-watch-series-7-lte-41mm-vien-thep-8.jpg" src="hinh/3.jpg" title="Apple Watch Series 7 LTE 41mm viền thép - Hỗ trợ eSim"></a></p>
+                                       <p><strong>Pin dùng khoảng 1.5 ngày - sạc đầy trong 2 giờ</strong></p>
+                                       <p>Viên pin trên chiếc&nbsp;Apple Watch S7&nbsp;này cho phép bạn sử dụng trong khoảng 1.5 ngày và cần 2 giờ để sạc đầy với tốc độ nhanh hơn so với thế hệ trước (S6) 33%. Đặc biệt hơn, bạn chỉ cần 45 phút để sạc từ 0 - 80%.</p>
+                                       <p>Lưu ý: Thời lượng pin thay đổi tùy theo cách sử dụng của người dùng. Tính năng sạc nhanh hiện không khả dụng tại Việt Nam.</p>
+                                       <p><a href="https://www.thegioididong.com/images/7077/252283/apple-watch-series-7-lte-41mm-vien-thep-7.jpg" onclick="return false;"><img alt="Apple Watch Series 7 LTE 41mm viền thép - Thời lượng pin" data-src="https://cdn.tgdd.vn/Products/Images/7077/252283/apple-watch-series-7-lte-41mm-vien-thep-7.jpg" src="hinh/3.jpg" title="Apple Watch Series 7 LTE 41mm viền thép - Thời lượng pin"></a></p>
+                                       <h6>&nbsp;</h6>
+                                       <h6 style="display: none;">Thông số kỹ thuật</h6>
+                                       <table cellpadding="0" cellspacing="0" style="display: none;">
+                                          <tbody>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <p><b>Màn hình</b></p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>Công nghệ màn hình</td>
+                                                <td>OLED</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Kích thước màn hình</td>
+                                                <td>1.78 inch</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Độ phân giải</td>
+                                                <td>448 x 368 pixels</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Chất liệu mặt</td>
+                                                <td>Ion-X strengthened glass</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Đường kính mặt</td>
+                                                <td>44mm</td>
+                                             </tr>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <p><b>Tiện ích</b></p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>Theo dõi sức khỏe</td>
+                                                <td>Đo nhịp tim, Theo dõi giấc ngủ, Tính lượng calories tiêu thụ, Đếm số bước chân, Chế độ luyện tập, Tính quãng đường chạy</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Hiển thị thông báo</td>
+                                                <td>Cuộc gọi, Nội dung tin nhắn, Tin nhắn, Zalo, Messenger, (Facebook), Line, Viber</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Tiện ích khác</td>
+                                                <td>Điều khiển chụp ảnh, Nghe gọi trên đồng hồ, Nghe nhạc với tai nghe Bluetooth, Màn hình luôn hiển thị, La bàn, Đồng hồ bấm giờ, Điều khiển chơi nhạc, Rung thông báo, Thay mặt đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, Báo thức, Phát hiện té ngã</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Kết nối</td>
+                                                <td>Bluetooth v5.0, Wifi, GPS</td>
+                                             </tr>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <p><b>Dây đeo</b></p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>Chất liệu dây</td>
+                                                <td>Silicone</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Dây có thể tháo rời</td>
+                                                <td>Có</td>
+                                             </tr>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <p><b>Thông tin khác</b></p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>Ngôn ngữ</td>
+                                                <td>Tiếng Việt , Tiếng Anh</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Kích thước</td>
+                                                <td>44mm x 38 mm x 10.4 mm</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Trọng lượng</td>
+                                                <td>36.5 gram</td>
+                                             </tr>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <p><b>Pin</b></p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>Thời gian sử dụng pin</td>
+                                                <td>Khoảng 1.5 ngày</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Thời gian sạc</td>
+                                                <td>Khoảng 2 giờ</td>
+                                             </tr>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <p><b>Cấu hình</b></p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>CPU</td>
+                                                <td>Apple S6 64 bit</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Bộ nhớ trong</td>
+                                                <td>32GB</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Hệ điều hành</td>
+                                                <td>watchOS 7.0</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Kết nối được với hệ điều hành</td>
+                                                <td>iOS 14 trở lên</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Cổng sạc</td>
+                                                <td>Đế sạc nam châm</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                       <p>&nbsp;</p>
+                                    </div>
+                                 </div>
+                                 <div class="js-seemore ega-pro__seemore text-center pos-relative mt-3">
+                                    <a href="javascript:void(0)" title="Xem thêm" class="btn btn-icon w-100 justify-content-center btn-secondary">
+                                    <i class="fas fa-plus-circle"></i> Xem thêm
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="col-12 col-xl-11 product_sidebar pl-0 pl-sm-3 pr-0">
+                                 <div class="product-specifications card border-0">
+                                    <div class="title_module_main heading-bar d-flex justify-content-between align-items-center">
+                                       <h2 class="heading-bar__title ">
+                                          Thông số kỹ thuật		
+                                       </h2>
+                                    </div>
+                                    <div class="product_getcontent">
+                                       <table></table>
+                                       <table cellpadding="0" cellspacing="0">
+                                          <tbody>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <p><b>Màn hình</b></p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>Công nghệ màn hình</td>
+                                                <td>OLED</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Kích thước màn hình</td>
+                                                <td>1.78 inch</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Độ phân giải</td>
+                                                <td>448 x 368 pixels</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Chất liệu mặt</td>
+                                                <td>Ion-X strengthened glass</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Đường kính mặt</td>
+                                                <td>44mm</td>
+                                             </tr>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <p><b>Tiện ích</b></p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>Theo dõi sức khỏe</td>
+                                                <td>Đo nhịp tim, Theo dõi giấc ngủ, Tính lượng calories tiêu thụ, Đếm số bước chân, Chế độ luyện tập, Tính quãng đường chạy</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Hiển thị thông báo</td>
+                                                <td>Cuộc gọi, Nội dung tin nhắn, Tin nhắn, Zalo, Messenger, (Facebook), Line, Viber</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Tiện ích khác</td>
+                                                <td>Điều khiển chụp ảnh, Nghe gọi trên đồng hồ, Nghe nhạc với tai nghe Bluetooth, Màn hình luôn hiển thị, La bàn, Đồng hồ bấm giờ, Điều khiển chơi nhạc, Rung thông báo, Thay mặt đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, Báo thức, Phát hiện té ngã</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Kết nối</td>
+                                                <td>Bluetooth v5.0, Wifi, GPS</td>
+                                             </tr>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <p><b>Dây đeo</b></p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>Chất liệu dây</td>
+                                                <td>Silicone</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Dây có thể tháo rời</td>
+                                                <td>Có</td>
+                                             </tr>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <p><b>Thông tin khác</b></p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>Ngôn ngữ</td>
+                                                <td>Tiếng Việt , Tiếng Anh</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Kích thước</td>
+                                                <td>44mm x 38 mm x 10.4 mm</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Trọng lượng</td>
+                                                <td>36.5 gram</td>
+                                             </tr>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <p><b>Pin</b></p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>Thời gian sử dụng pin</td>
+                                                <td>Khoảng 1.5 ngày</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Thời gian sạc</td>
+                                                <td>Khoảng 2 giờ</td>
+                                             </tr>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <p><b>Cấu hình</b></p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td>CPU</td>
+                                                <td>Apple S6 64 bit</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Bộ nhớ trong</td>
+                                                <td>32GB</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Hệ điều hành</td>
+                                                <td>watchOS 7.0</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Kết nối được với hệ điều hành</td>
+                                                <td>iOS 14 trở lên</td>
+                                             </tr>
+                                             <tr>
+                                                <td>Cổng sạc</td>
+                                                <td>Đế sạc nam châm</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                    <div class="ega-pro__seemore text-center pos-relative mt-3 js-show-specifications">
+                                       <a href="javascript:void(0)" title="Xem thêm" class="btn btn-icon w-100 justify-content-center btn-secondary" data-toggle="modal" data-target="#specification-modal">
+                                       <i class="fas fa-plus-circle"></i> Xem thêm
+                                       </a>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="specification-modal" tabindex="-1" aria-labelledby="specification-modal-label" aria-hidden="true">
+                                       <div class="modal-dialog modal-dialog-scrollable">
+                                          <div class="modal-content">
+                                             <div class="modal-header border-0 pb-0">
+                                                <h5 class="modal-title" id="specification-modal-label">Thông số kỹ thuật</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                                </button>
+                                             </div>
+                                             <div class="modal-body">
+                                                <table></table>
+                                                <table cellpadding="0" cellspacing="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td colspan="2">
+                                                            <p><b>Màn hình</b></p>
+                                                         </td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Công nghệ màn hình</td>
+                                                         <td>OLED</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Kích thước màn hình</td>
+                                                         <td>1.78 inch</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Độ phân giải</td>
+                                                         <td>448 x 368 pixels</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Chất liệu mặt</td>
+                                                         <td>Ion-X strengthened glass</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Đường kính mặt</td>
+                                                         <td>44mm</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td colspan="2">
+                                                            <p><b>Tiện ích</b></p>
+                                                         </td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Theo dõi sức khỏe</td>
+                                                         <td>Đo nhịp tim, Theo dõi giấc ngủ, Tính lượng calories tiêu thụ, Đếm số bước chân, Chế độ luyện tập, Tính quãng đường chạy</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Hiển thị thông báo</td>
+                                                         <td>Cuộc gọi, Nội dung tin nhắn, Tin nhắn, Zalo, Messenger, (Facebook), Line, Viber</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Tiện ích khác</td>
+                                                         <td>Điều khiển chụp ảnh, Nghe gọi trên đồng hồ, Nghe nhạc với tai nghe Bluetooth, Màn hình luôn hiển thị, La bàn, Đồng hồ bấm giờ, Điều khiển chơi nhạc, Rung thông báo, Thay mặt đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, Báo thức, Phát hiện té ngã</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Kết nối</td>
+                                                         <td>Bluetooth v5.0, Wifi, GPS</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td colspan="2">
+                                                            <p><b>Dây đeo</b></p>
+                                                         </td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Chất liệu dây</td>
+                                                         <td>Silicone</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Dây có thể tháo rời</td>
+                                                         <td>Có</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td colspan="2">
+                                                            <p><b>Thông tin khác</b></p>
+                                                         </td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Ngôn ngữ</td>
+                                                         <td>Tiếng Việt , Tiếng Anh</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Kích thước</td>
+                                                         <td>44mm x 38 mm x 10.4 mm</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Trọng lượng</td>
+                                                         <td>36.5 gram</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td colspan="2">
+                                                            <p><b>Pin</b></p>
+                                                         </td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Thời gian sử dụng pin</td>
+                                                         <td>Khoảng 1.5 ngày</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Thời gian sạc</td>
+                                                         <td>Khoảng 2 giờ</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td colspan="2">
+                                                            <p><b>Cấu hình</b></p>
+                                                         </td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>CPU</td>
+                                                         <td>Apple S6 64 bit</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Bộ nhớ trong</td>
+                                                         <td>32GB</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Hệ điều hành</td>
+                                                         <td>watchOS 7.0</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Kết nối được với hệ điều hành</td>
+                                                         <td>iOS 14 trở lên</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td>Cổng sạc</td>
+                                                         <td>Đế sạc nam châm</td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </section>
+                </div>
+                    </div>
+                    <div class="footer">
+                        <div class="info" > 
+                          
+                          <a href="tel:0974008742">  <i class="fa-solid fa-phone"></i></a>
+                          <a href="https://www.facebook.com/messages/t/100007465302816/">  <i class="fa-brands fa-facebook-messenger"></i> </a>
+                          <a href="https://www.instagram.com/niinh.lee/">  <i class="fa-brands fa-instagram"></i> </a>
+                          <i class="lienhe"> Liên hệ chúng tôi để nhận thêm nhiều khuyến mãi đặc biệt.</i>
+                    
+                        </div>
+                        <div class="ft">
+                            <div class="ten"><a href="index.html"> VTSTORE.com</a></div>
+                            <div><b> Địa chỉ:</b> 1a Đỗ Nhuận - Sơn Kỳ - Q. Tân Phú, Tp.HCM</div>
+                            <div><b> Số điện thoại:</b> 0974008742</div>
+                            <div><b> Email:</b><a href="https://mail.google.com/mail/u/1/?ogbl#inbox"> levi34202@gmail.com </a></div>
+                             <div class="gioithieu"><a href="gioithieu.html"> Giới thiệu về nhóm </a></div>
+                        </div>
+                    </div>
+                   
+		        </div>
+            </div>
+         </div>
+    
+</body>
+</html>
